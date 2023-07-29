@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import { CiSearch } from 'react-icons/ci';
 import { faker } from '@faker-js/faker';
-import {AiTwotoneStar} from 'react-icons/ai';
+import {GrStar} from 'react-icons/gr';
+import {PiHeartThin} from 'react-icons/pi';
 
 const FilteredPage = () => {
   const [input, setInput] = useState('');
+  const [wishlist,setWishlist]=useState(false);
+  const handleWishlist=()=>{
+    setWishlist(!wishlist);
+  };
+
+  
 
   const Cards = Array.from({ length: 12 }, (_, index) => ({
     name: faker.commerce.productName(),
@@ -36,17 +43,21 @@ const FilteredPage = () => {
         <div className='flex justify-center w-4/5 h-full px-6 py-10'>
           <div className='w-full grid grid-cols-4 gap-y-6'>
             {Cards.map((item, index) => (
-              <div className='my-4 h-full w-[190px] rounded-[4px]'>
-                <img src={item.photo} alt='cardImages' className='h-[260px] w-full' />
-                <p>{item.name}</p>
-                <p>{item.mrp}</p>
-                <p>{item.price}</p>
-                <div className='flex text-yellow-400'>
-                <AiTwotoneStar />
-                <AiTwotoneStar />
-                <AiTwotoneStar />
-                <AiTwotoneStar />
-                <AiTwotoneStar />
+              <div className='my-4 h-full w-[190px] relative'>
+                <PiHeartThin className={`absolute right-3 top-3 h-[22px] w-[22px] font-extralight ${wishlist?'fill-red-300' : 'text-white '}`} onClick={handleWishlist}/>
+                <img src={item.photo} alt='cardImages' className='h-[260px] w-full rounded-t-[4px] bg-[#D9D9D9]' />
+                <p className='font-light text-base mt-4 mb-1'>{item.name}</p>
+                <div className='flex gap-1 font-inter items-center'>
+                  <p className='text-[#00000066] line-through font-extralight text-sm'>Rs.{item.mrp}</p>
+                  <p className='font-medium text-sm text-[#6D84FF]'>Rs.{item.price}</p>
+                </div>
+                <div className='flex text-yellow-400 py-1 items-center'>
+                <GrStar />
+                <GrStar />
+                <GrStar />
+                <GrStar />
+                <GrStar />
+                <p className='font-inter text-[#000000CC] text-xs font-extralight'>(210)</p>
                 </div>
               </div>
             ))}
