@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Logo from './Logo';
 import { CiSearch } from 'react-icons/ci';
-import { faker, tr } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { GrStar } from 'react-icons/gr';
 import { AiFillHeart } from 'react-icons/ai';
 import { PiHeartThin } from 'react-icons/pi';
@@ -99,9 +99,7 @@ const FilteredPage = () => {
 
                 }
                 <img src={item.photo} alt='cardImages' className='h-[130px] md:h-[260px] w-full rounded-t-[4px] bg-[#D9D9D9] object-cover' />
-                {/* <div className="absolute bottom-32 left-0 w-full bg-gray-800 bg-opacity-75 text-white p-4 opacity-50 transition-opacity duration-300 group-hover:opacity-100">
-                  <p>View Product</p>
-                </div> */}
+                
                 <div className="hidden  absolute bottom-32 w-full md:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="bg-[#6D84FFB5] px-8 py-2 rounded-md text-white text-center">
                     <p className="text-base font-normal font-inter">View Product</p>
