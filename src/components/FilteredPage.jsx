@@ -4,6 +4,7 @@ import { CiSearch } from 'react-icons/ci';
 import { faker } from '@faker-js/faker';
 import {GrStar} from 'react-icons/gr';
 import {PiHeartThin} from 'react-icons/pi';
+import FilterOption from './FilterOption';
 
 const FilteredPage = () => {
   const [input, setInput] = useState('');
@@ -38,7 +39,9 @@ const FilteredPage = () => {
       </div>
 
       <div className='w-full  flex'>
-        <div className='w-1/5 h-full  flex justify-center font-inter text-2xl font-normal'>Search Result</div>
+        <div className='w-1/5 h-full flex justify-center px-4 sticky top-24'>
+          <FilterOption/>
+        </div>
 
         <div className='flex justify-center w-4/5 h-full px-6 py-10'>
           <div className='w-full grid grid-cols-4 gap-y-6'>
