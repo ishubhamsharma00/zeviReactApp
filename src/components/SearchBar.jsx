@@ -18,7 +18,7 @@ const SearchBar = () => {
 
   return (
     <div className='h-full flex flex-col items-center justify-center w-full mt-4'>
-      <div className='flex items-center justify-between h-14 w-3/5 bg-[#FFFFFF] px-6 text-xl rounded-xl outline-none shadow-xl py-2'
+      <div className='flex items-center justify-between h-10 md:h-14 md:w-3/5 w-4/5 bg-[#FFFFFF] px-6 text-base md:text-xl rounded-xl outline-none shadow-xl py-2'
         onClick={() => setOpen(true)}>
         <input
           type='search'
@@ -28,7 +28,7 @@ const SearchBar = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleEnter}
         />
-        <RiSearchLine className='h-8 w-8 text-gray-400 ' />
+        <RiSearchLine className='md:h-8 md:w-8 h-6 w-6 text-gray-400 ' />
       </div>
       {open && (
         <TrendingBox/>
